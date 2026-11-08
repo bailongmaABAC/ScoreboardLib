@@ -6,20 +6,13 @@ plugins {
 
 repositories {
     mavenLocal()
-    maven("https://hub.spigotmc.org/nexus/content/repositories/snapshots/")
-    maven("https://oss.sonatype.org/content/repositories/snapshots")
-    maven("https://oss.sonatype.org/content/repositories/central")
-    maven(uri("https://repo.viaversion.com"))
-    maven(uri("https://maven.plugily.xyz/releases"))
-    maven(uri("https://maven.plugily.xyz/snapshots"))
-    maven(uri("https://jitpack.io"))
-    maven(uri("https://repo.maven.apache.org/maven2/"))
+    maven("https://repo.papermc.io/repository/maven-public/")
+    maven("https://repo.viaversion.com")
 }
 
 dependencies {
-    implementation("org.spigotmc:spigot-api:1.12.2-R0.1-SNAPSHOT")
+    implementation("io.papermc.paper:paper-api:1.21.11-R0.1-SNAPSHOT")
     implementation("com.viaversion:viaversion-api:4.0.0")
-    implementation("com.github.ProtocolSupport:ProtocolSupport:master")
 }
 
 

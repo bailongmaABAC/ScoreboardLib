@@ -10,7 +10,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
-import protocolsupport.api.ProtocolSupportAPI;
 
 public final class ScoreboardLib extends JavaPlugin {
 
@@ -26,18 +25,6 @@ public final class ScoreboardLib extends JavaPlugin {
   }
 
   public static Scoreboard createScoreboard(Player holder) {
-    if(Bukkit.getPluginManager().isPluginEnabled("ProtocolSupport")) {
-      try {
-        int version = ProtocolSupportAPI.getProtocolVersion(holder).getId();
-        if(version >= 401 && ServerVersion.Version.isCurrentEqualOrHigher(ServerVersion.Version.v1_13)) {
-          //only give player & server higher 1.12 the better scoreboard
-          return new SimpleScoreboard(holder);
-        }
-      } catch(Exception ignored) {
-        //Can't interact with protocol api
-      }
-      return new LegacySimpleScoreboard(holder);
-    }
     if(Bukkit.getPluginManager().isPluginEnabled("ViaVersion")) {
       try {
         ViaAPI api = Via.getAPI(); // Get the API
