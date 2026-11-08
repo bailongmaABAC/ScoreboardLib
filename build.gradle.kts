@@ -20,7 +20,11 @@ dependencies {
 group = "me.tigerhix.lib"
 version = "1.4.5-1"
 description = "scoreboard"
-java.sourceCompatibility = JavaVersion.VERSION_1_8
+java {
+    // paper-api 1.21.11 的 class 文件是 Java 21，target 定在 8 会让 Gradle 变体解析要求 JVM 8 实现而失败。
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+}
 
 
 tasks {
