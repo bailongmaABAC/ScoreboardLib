@@ -11,13 +11,14 @@ repositories {
 }
 
 dependencies {
-    implementation("io.papermc.paper:paper-api:1.21.11-R0.1-SNAPSHOT")
-    implementation("com.viaversion:viaversion-api:4.0.0")
+    // 服务端 API 与 Via 的 API 由运行环境提供，声明成 compileOnly 才不会写进 POM 变成消费者的运行时依赖。
+    compileOnly("io.papermc.paper:paper-api:1.21.11-R0.1-SNAPSHOT")
+    compileOnly("com.viaversion:viaversion-api:4.0.0")
 }
 
 
 group = "me.tigerhix.lib"
-version = "1.4.5"
+version = "1.4.5-1"
 description = "scoreboard"
 java.sourceCompatibility = JavaVersion.VERSION_1_8
 
